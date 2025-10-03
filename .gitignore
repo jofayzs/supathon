@@ -1,0 +1,87 @@
+# ========================================
+# Custom Ignores - Safe from Lens Studio
+# ========================================
+
+# Node.js / NPM
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+.npm
+.pnpm-debug.log*
+
+# Environment & Secrets
+.env
+.env.local
+.env.*.local
+*.env
+.secrets
+secrets.json
+credentials.json
+
+# IDE & Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+*.sublime-project
+*.sublime-workspace
+.history/
+
+# OS Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# Logs & Debugging
+logs/
+*.log
+debug.log
+*.log.*
+
+# Build & Distribution
+dist/
+build/
+out/
+*.tgz
+
+# Temporary Files
+tmp/
+temp/
+*.tmp
+*.bak
+*.backup
+*.cache
+
+# ========================================
+# Shipped by Lens Studio
+# ========================================
+
+# The lines below are automatically generated and updated by Lens Studio.
+# Please do not modify them manually, as changes will be overwritten each time!
+# If you want to make changes to this file, please put them either above or below this section.
+
+Cache/**
+PluginsUserPreferences/**
+Support/**
+BackUp/**
+Workspaces/**
+.vscode/
+/jsconfig.json
+/tsconfig.json
+.DS_Store
+*.lock
+
+# Shipped by Lens Studio

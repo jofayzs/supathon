@@ -1,0 +1,98 @@
+- !<AssetImportMetadata/a1eb90ac-c457-48f7-be0e-085e4d55fc32>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> eab8fea5-0838-465b-9770-6283bc313ebf
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> eab8fea5-0838-465b-9770-6283bc313ebf
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 3386fc87-3fd7-4317-bf3e-db4023b4085b
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/3386fc87-3fd7-4317-bf3e-db4023b4085b>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: 85472adf-4dd3-47bc-8618-26b5bf84dbc1
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    audioFileName: false
+    audioPlayer: false
+    defaultMaterial: false
+    enableDebugLogs: false
+    enableProgressLogs: false
+    imageDisplay: false
+    imageFileName: false
+    internetModule: false
+    loadButton: false
+    modelContainer: false
+    modelFileName: false
+    modelScale: false
+    statusText: false
+    storageBucket: false
+    supabaseAnonKey: false
+    supabaseServiceKey: false
+    supabaseUrl: false
+    useContainerPosition: false
+    useServiceKey: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - supabaseUrl: ""
+      supabaseAnonKey: ""
+      useServiceKey: false
+      supabaseServiceKey: ""
+      storageBucket: assets
+      internetModule: !<reference.InternetModule> 00000000-0000-0000-0000-000000000000
+      modelFileName: models/character.glb
+      imageFileName: images/texture.png
+      audioFileName: audio/sound.mp3
+      modelContainer: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      imageDisplay: !<reference.Image> 00000000-0000-0000-0000-000000000000
+      audioPlayer: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      defaultMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      loadButton: !<MappingBased.AssignableType> 00000000-0000-0000-0000-000000000000
+      enableProgressLogs: true
+      enableDebugLogs: true
+      useContainerPosition: true
+      modelScale: !<float> 1.000000
+      statusText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @input string supabaseUrl {"hint":"Your Supabase project URL (e.g., https://your-project.supabase.co)"}'
+    - '// @input string supabaseAnonKey {"hint":"Your Supabase anon/public API key from the dashboard"}'
+    - '// @input bool useServiceKey {"hint":"Use service role key to bypass RLS policies (TESTING ONLY - NOT for production)"}'
+    - '// @input string supabaseServiceKey {"hint":"Your Supabase service role key (ONLY if useServiceKey is enabled)"}'
+    - '// @input string storageBucket = "specs-bucket" {"hint":"Supabase Storage bucket name where assets are stored"}'
+    - '// @input Asset.InternetModule internetModule {"hint":"Internet Module for making HTTP requests"}'
+    - "// @input string modelFileName = \"fox/scene.gltf\" {\"hint\":\"3D model filename in storage (e.g., 'fox/scene.gltf')\"}"
+    - "// @input string imageFileName = \"images/spectacles.jpg\" {\"hint\":\"Image filename in storage (e.g., 'images/spectacles.jpg')\"}"
+    - "// @input string audioFileName = \"audio/chill.mp3\" {\"hint\":\"Audio filename in storage (e.g., 'audio/chill.mp3')\"}"
+    - '// @input SceneObject modelContainer {"hint":"Scene object where the 3D model will be instantiated"}'
+    - '// @input Component.Image imageDisplay {"hint":"Image component to display the loaded texture"}'
+    - '// @input SceneObject audioPlayer {"hint":"Scene object with AudioComponent to play the loaded audio"}'
+    - '// @input Asset.Material defaultMaterial {"hint":"Material to use for instantiated 3D models"}'
+    - '// @input AssignableType loadButton {"hint":"Interactable button to trigger asset loading (using Spectacles Interaction Kit)"}'
+    - '// @input bool enableProgressLogs = true {"hint":"Show loading progress in console"}'
+    - '// @input bool enableDebugLogs = true {"hint":"Enable detailed debug logging"}'
+    - '// @input bool useContainerPosition = true {"hint":"Position models at modelContainer location"}'
+    - '// @input float modelScale = 1 {"hint":"Scale factor for loaded models", "widget":"slider", "min":0.1, "max":5, "step":0.1}'
+    - '// @input Component.Text statusText {"hint":"Text component to display loading status (optional)"}'

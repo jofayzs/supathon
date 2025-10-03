@@ -1,0 +1,68 @@
+- !<AssetImportMetadata/f5487f3d-f772-42e6-965d-bba8a7b240d2>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 277d2eb5-9bd7-454d-b5a3-0397deda16cf
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 277d2eb5-9bd7-454d-b5a3-0397deda16cf
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 6b6043f9-86f0-4dd8-9007-6739f26d405d
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/6b6043f9-86f0-4dd8-9007-6739f26d405d>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: 817b5ca9-33f3-4cda-b3ec-3b50d4b044df
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    enableDebugLogs: false
+    endpointUrl: false
+    inputImage: false
+    internetModule: false
+    maxImageSize: false
+    outputImage: false
+    processButton: false
+    publicKey: false
+    testImageUrl: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - internetModule: !<reference.InternetModule> 00000000-0000-0000-0000-000000000000
+      endpointUrl: ""
+      publicKey: ""
+      inputImage: !<reference.Texture> 00000000-0000-0000-0000-000000000000
+      outputImage: !<reference.Image> 00000000-0000-0000-0000-000000000000
+      testImageUrl: "https://mhuywfpdvmnethlhfaek.supabase.co/storage/v1/object/public/specs-bucket/images/spectacles.jpg"
+      maxImageSize: !<float> 200000.000000
+      processButton: !<MappingBased.AssignableType> 00000000-0000-0000-0000-000000000000
+      enableDebugLogs: true
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @input Asset.InternetModule internetModule {"hint":"Internet Module for making HTTP requests"}'
+    - '// @input string endpointUrl = "https://mhuywfpdvmnethlhfaek.supabase.co/functions/v1/specs-example-function" {"hint":"Supabase Edge Function endpoint URL"}'
+    - '// @input string publicKey {"hint":"Your Supabase anon/public API key"}'
+    - '// @input Asset.Texture inputImage {"hint":"Input image to process (will be resized and blurred)"}'
+    - '// @input Component.Image outputImage {"hint":"Output image component to display processed result"}'
+    - '// @input string testImageUrl = "https://mhuywfpdvmnethlhfaek.supabase.co/storage/v1/object/public/specs-bucket/public/images/spectacles.jpg" {"hint":"Test image URL from your Supabase Storage"}'
+    - '// @input float maxImageSize = 200000 {"hint":"Limit image size to prevent timeouts (bytes)", "widget":"slider", "min":50000, "max":500000, "step":10000}'
+    - '// @input AssignableType processButton {"hint":"Interactable button to trigger Edge Function call (using Spectacles Interaction Kit)"}'
+    - '// @input bool enableDebugLogs = true {"hint":"Enable debug logging"}'

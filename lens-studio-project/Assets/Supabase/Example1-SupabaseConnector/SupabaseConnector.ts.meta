@@ -1,0 +1,62 @@
+- !<AssetImportMetadata/c914d465-f54f-43ff-97a2-5e296afbabbc>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 4a1d4415-50fb-4cdf-b942-3f16c9828884
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 4a1d4415-50fb-4cdf-b942-3f16c9828884
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> cb8f186b-e411-4eae-994f-f4b728193d3f
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/cb8f186b-e411-4eae-994f-f4b728193d3f>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: cc8194e6-78fd-46d4-be86-c1fcb535eed4
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    channelName: false
+    dataRetrievalButton: false
+    internetModule: false
+    logText: false
+    supabaseAnonKey: false
+    supabaseUrl: false
+    tableName: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - supabaseUrl: ""
+      supabaseAnonKey: ""
+      tableName: test_messages
+      internetModule: !<reference.InternetModule> 00000000-0000-0000-0000-000000000000
+      channelName: test_channel
+      dataRetrievalButton: !<MappingBased.AssignableType> 00000000-0000-0000-0000-000000000000
+      logText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @input string supabaseUrl {"hint":"Your Supabase project URL (e.g., https://your-project.supabase.co)"}'
+    - '// @input string supabaseAnonKey {"hint":"Your Supabase anon/public API key from the dashboard"}'
+    - '// @input string tableName = "test_messages" {"hint":"Table name to test database operations"}'
+    - '// @input Asset.InternetModule internetModule {"hint":"Internet Module for making HTTP requests"}'
+    - '// @input string channelName = "test_channel" {"hint":"Channel name for realtime messaging"}'
+    - '// @input AssignableType dataRetrievalButton {"hint":"Optional: Button or interactable to trigger data retrieval"}'
+    - '// @input Component.Text logText {"hint":"Optional: Text component to display logs on device"}'
