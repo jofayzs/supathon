@@ -1,8 +1,8 @@
 <script setup lang="ts">
-const script = ref(null);
 import MapView from "@/components/MapView.vue";
-import UploadImage from "@/components/UploadImage.vue";
+import UploadModal from "@/components/UploadModal.vue";
 import LoginForm from "@/components/LoginForm.vue";
+import Header from "@/components/Header.vue";
 
 const user = ref(null);
 
@@ -12,18 +12,15 @@ const handleLoginSuccess = (userData) => {
 </script>
 
 <template>
-  <div class="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+  <div class="min-h-screen bg-gradient-to-br">
     <div v-if="!user" class="flex items-center justify-center min-h-screen p-4">
       <LoginForm @success="handleLoginSuccess" />
     </div>
     <div v-else>
-      <div class="p-4">
-        <div class="flex justify-between items-center mb-4">
-          <h1 class="text-2xl font-bold">Welcome, {{ user.email }}</h1>
-          <UButton @click="user = null" color="gray">Logout</UButton>
-        </div>
+      <div class="z-10!">
+        <Header />
         <MapView />
-        <UploadImage />
+        <UploadModal class="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-10" />
       </div>
     </div>
   </div>

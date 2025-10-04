@@ -19,7 +19,7 @@ const closeModal = () => {
 </script>
 
 <template>
-    <UModal title="Upload an Image" v-model:show="isModalOpen" :close-on-esc="true" :close-on-backdrop="true">
+    <UModal title="Upload an Image" v-model:open="isModalOpen">
         <!-- Button that triggers modal -->
         <UButton label="Upload Image" color="primary" variant="solid" @click="isModalOpen = true" />
 
