@@ -1,11 +1,19 @@
 <script setup>
-import { onMounted, onBeforeUnmount, ref } from 'vue'
+import { onMounted, onBeforeUnmount, ref, watch } from 'vue'
 import mapboxgl from 'mapbox-gl'
+import { useThemeStore } from '~/stores/useThemeStore'
 
 mapboxgl.accessToken = 'pk.eyJ1IjoidGhvbWFzLWJlcmtlbGV5IiwiYSI6ImNtZ2NvYTcyZDBvOHoybXBuZndyM28wbm4ifQ.VxNKayC7-Ky3yhLy3bm8dQ'
 
 const mapContainer = ref(null)
 const map = ref(null)
+const themeStore = useThemeStore()
+
+const getMapStyle = () => {
+    return themeStore.isDark
+        ? 'mapbox://styles/mapbox/dark-v11'
+        : 'mapbox://styles/mapbox/streets-v12'
+}
 
 onMounted(() => {
     if (!mapContainer.value) {
@@ -14,7 +22,7 @@ onMounted(() => {
 
     const mapInstance = new mapboxgl.Map({
         container: mapContainer.value,
-        style: 'mapbox://styles/mapbox/streets-v12',
+        style: getMapStyle(),
         center: [-122.4194, 37.7749],
         zoom: 12,
     })
@@ -63,6 +71,13 @@ onMounted(() => {
     })
 
     map.value = mapInstance
+})
+
+// Watch for theme changes and update map style
+watch(() => themeStore.isDark, () => {
+    if (map.value) {
+        map.value.setStyle(getMapStyle())
+    }
 })
 
 const reset = () => {
