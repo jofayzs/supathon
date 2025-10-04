@@ -142,6 +142,7 @@ const googleLoading = ref(false)
 const error = ref('')
 const success = ref('')
 const showEmailForm = ref(false)
+const userStore = useUserStore()
 
 const state = reactive({
   email: '',
@@ -215,6 +216,7 @@ const handleEmailLogin = async () => {
       if (result.error) throw result.error
 
       success.value = 'Successfully signed in!'
+      userStore.setUser(result.data.user)
       emit('success', result.data.user)
     }
   } catch (err) {
@@ -228,6 +230,7 @@ const handleEmailLogin = async () => {
 onMounted(() => {
   const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
     if (event === 'SIGNED_IN' && session) {
+      userStore.setUser(session.user);
       emit('success', session.user)
     }
   })
