@@ -32,9 +32,9 @@ supabase-select/
 
 ### 🛠️ Essential Tools & Setup
 
-#### 1. **Download Lens Studio 5.14 (Latest)**
+#### 1. **Download Lens Studio 5.12.1**
 Get the latest version of Lens Studio to ensure compatibility with all features:
-- [Download Lens Studio 5.14](https://ar.snap.com/lens-studio-dl?utm_source=GooglePM&utm_medium=PAIDPLATFORM&utm_campaign=LensStudio_PM_P0_RET&utm_term=Retargeting_LS_Downloaders&utm_content=LS_ProductPage&gad_source=1&gad_campaignid=22443428343&gbraid=0AAAAADGpnVGSjGB7_qLWN6ZtsHbOIQPh5&gclid=CjwKCAjw6P3GBhBVEiwAJPjmLps2SgE89H9XPRV38dnea-AbjzkCjO7rKr2FqODPXMRib6ZjdOVIJBoCVQkQAvD_BwE)
+- [Download Lens Studio 5.12.1]([https://ar.snap.com/lens-studio-dl?utm_source=GooglePM&utm_medium=PAIDPLATFORM&utm_campaign=LensStudio_PM_P0_RET&utm_term=Retargeting_LS_Downloaders&utm_content=LS_ProductPage&gad_source=1&gad_campaignid=22443428343&gbraid=0AAAAADGpnVGSjGB7_qLWN6ZtsHbOIQPh5&gclid=CjwKCAjw6P3GBhBVEiwAJPjmLps2SgE89H9XPRV38dnea-AbjzkCjO7rKr2FqODPXMRib6ZjdOVIJBoCVQkQAvD_BwE](https://ar.snap.com/older-versions))
 
 #### 2. **Create a Snapchat Account**
 You'll need a Snapchat account to develop for Spectacles:
