@@ -12,9 +12,7 @@ const handleLoginSuccess = (userData) => {
 </script>
 
 <template>
-  <div
-    class="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50"
-  >
+  <div class="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
     <div v-if="!user" class="flex items-center justify-center min-h-screen p-4">
       <LoginForm @success="handleLoginSuccess" />
     </div>
