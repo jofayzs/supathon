@@ -1,0 +1,9 @@
+import { createClient } from '@supabase/supabase-js'
+
+const SUPABASE_URL = 'https://xawxdlsvwspnyhhxmpqz.supabase.co'
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inhhd3hkbHN2d3NwbnloaHhtcHF6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTk1OTgwNDgsImV4cCI6MjA3NTE3NDA0OH0.BaQo65NQHEJbB7trv8lnS5bYejkSyJMAnTLjo4soM2o'
+
+export const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
+
+export const STORAGE_BUCKET = 'images'
+export const BEARER_TOKEN = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inhhd3hkbHN2d3NwbnloaHhtcHF6Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc1OTU5ODA0OCwiZXhwIjoyMDc1MTc0MDQ4fQ.1BN4Ghgsh9KkG8lRAlwXx_56-zqMEOxNqh43FgVziQo'
