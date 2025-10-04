@@ -1,0 +1,86 @@
+- !<AssetImportMetadata/c75af861-b129-4628-9198-80da9b55cfd7>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 1a487ae3-23e2-45e5-ad94-d2bf789f7fe1
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 1a487ae3-23e2-45e5-ad94-d2bf789f7fe1
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 25576e8b-2e11-48cb-bba8-3eb1c805b710
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/25576e8b-2e11-48cb-bba8-3eb1c805b710>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: 25445b8b-8060-4824-85cb-f9d367ee8cd3
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    cursorObject: false
+    distanceFromCamera: false
+    enableDebugLogs: false
+    heightOffset: false
+    internetModule: false
+    invertX: false
+    invertY: false
+    lsXRange: false
+    lsYRange: false
+    movementScale: false
+    movementSpeed: false
+    roomName: false
+    statusText: false
+    supabaseAnonKey: false
+    supabaseUrl: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - supabaseUrl: ""
+      supabaseAnonKey: ""
+      roomName: spectacles-demo-room
+      internetModule: !<reference.InternetModule> 00000000-0000-0000-0000-000000000000
+      cursorObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      movementSpeed: 0.150000
+      movementScale: 1.500000
+      heightOffset: !<float> 0.000000
+      distanceFromCamera: !<float> 2.000000
+      enableDebugLogs: true
+      statusText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      lsXRange: !<float> 50.000000
+      lsYRange: !<float> 30.000000
+      invertX: false
+      invertY: false
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @input string supabaseUrl {"hint":"Your Supabase project URL (e.g., https://your-project.supabase.co)"}'
+    - '// @input string supabaseAnonKey {"hint":"Your Supabase anon/public API key from the dashboard"}'
+    - '// @input string roomName = "spectacles-demo-room" {"hint":"Room name for cursor synchronization"}'
+    - '// @input Asset.InternetModule internetModule {"hint":"Internet Module for making HTTP requests"}'
+    - '// @input SceneObject cursorObject {"hint":"Scene object that will follow the cursor position"}'
+    - '// @input float movementSpeed = 0.15 {"hint":"Movement speed/smoothing factor (0.1 = smooth, 1.0 = instant)", "widget":"slider", "min":0.05, "max":1, "step":0.1}'
+    - '// @input float movementScale = 1.5 {"hint":"Scale factor for cursor movements (1.0 = normal, 2.0 = double movement)", "widget":"slider", "min":0.1, "max":50, "step":0.1}'
+    - '// @input float heightOffset {"hint":"Height offset for the cursor object (Y position)", "widget":"slider", "min":-2, "max":2, "step":0.1}'
+    - '// @input float distanceFromCamera = 2 {"hint":"Distance from camera (Z position)", "widget":"slider", "min":0.5, "max":10, "step":0.1}'
+    - '// @input bool enableDebugLogs = true {"hint":"Show debug information in console"}'
+    - '// @input Component.Text statusText {"hint":"Text object to display cursor status (optional)"}'
+    - '// @input float lsXRange = 50 {"hint":"Lens Studio X coordinate range (from -lsXRange to +lsXRange)", "widget":"slider", "min":10, "max":200, "step":1}'
+    - '// @input float lsYRange = 30 {"hint":"Lens Studio Y coordinate range (from -lsYRange to +lsYRange)", "widget":"slider", "min":10, "max":200, "step":1}'
+    - '// @input bool invertX {"hint":"Invert X axis mapping"}'
+    - '// @input bool invertY {"hint":"Invert Y axis mapping"}'

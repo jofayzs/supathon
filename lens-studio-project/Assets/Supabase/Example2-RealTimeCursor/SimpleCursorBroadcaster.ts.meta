@@ -1,0 +1,71 @@
+- !<AssetImportMetadata/9ba1f0fa-4b60-4c1a-a867-dffb192d5cda>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> bccbea92-54cc-45e8-8c94-605457589149
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> bccbea92-54cc-45e8-8c94-605457589149
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 895a585c-2f19-488f-8c71-378a425973d7
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/895a585c-2f19-488f-8c71-378a425973d7>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: b85150bd-186d-4aea-9641-3e5b52875aa6
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    autoStart: false
+    broadcastInterval: false
+    cursorObject: false
+    enableDebugLogs: false
+    internetModule: false
+    logText: false
+    positionScale: false
+    roomName: false
+    supabaseAnonKey: false
+    supabaseUrl: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - supabaseUrl: ""
+      supabaseAnonKey: ""
+      roomName: spectacles-demo-room
+      internetModule: !<reference.InternetModule> 00000000-0000-0000-0000-000000000000
+      cursorObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      broadcastInterval: 0.100000
+      autoStart: true
+      positionScale: !<float> 20.000000
+      logText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      enableDebugLogs: true
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @input string supabaseUrl {"hint":"Your Supabase project URL (e.g., https://your-project.supabase.co)"}'
+    - '// @input string supabaseAnonKey {"hint":"Your Supabase anon/public API key from the dashboard"}'
+    - '// @input string roomName = "spectacles-demo-room" {"hint":"Room name for cursor synchronization"}'
+    - '// @input Asset.InternetModule internetModule {"hint":"Internet Module for making HTTP requests"}'
+    - '// @input SceneObject cursorObject {"hint":"The cursor object to track and broadcast position"}'
+    - '// @input float broadcastInterval = 0.1 {"hint":"Broadcast interval in seconds", "widget":"slider", "min":0.05, "max":1, "step":0.05}'
+    - '// @input bool autoStart = true {"hint":"Enable automatic broadcasting on start"}'
+    - '// @input float positionScale = 20 {"hint":"Scale factor for position mapping (higher = more sensitive)", "widget":"slider", "min":0.1, "max":10, "step":0.1}'
+    - '// @input Component.Text logText {"hint":"Text component to display status and logs"}'
+    - '// @input bool enableDebugLogs = true {"hint":"Show debug information in console"}'
