@@ -169,13 +169,6 @@ Building for a hackathon? Check out these resources:
 
 ## 🛠️ Quick Start
 
-### Prerequisites
-
-1. **Supabase Account** - [Create free account](https://supabase.com)
-2. **Lens Studio 5.3+** - [Download here](https://ar.snap.com/lens-studio)
-3. **Spectacles OS 5.58.6621+** - For device testing
-4. **Web Browser** - For web controller (optional)
-
 ### Universal Setup Steps
 
 1. **Create Supabase Project**:
