@@ -24,7 +24,8 @@ const closeModal = () => {
 <template>
     <UModal title="Upload an Image" v-model:open="isModalOpen">
         <!-- Button that triggers modal -->
-        <UButton label="Upload Image" color="primary" variant="solid" @click="isModalOpen = true" />
+        <UButton icon="i-heroicons-camera" color="primary" variant="solid" size="xl" square
+            @click="isModalOpen = true" />
 
         <template #body>
             <UploadImage @uploaded="isUploaded = true" />
