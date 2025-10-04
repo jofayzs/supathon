@@ -2,12 +2,15 @@
 import { ref } from 'vue'
 import UploadImage from './UploadImage.vue'
 
+const emit = defineEmits(['uploaded'])
+
 const isUploaded = ref(false)
 const isModalOpen = ref(false)
 
 // Watch for changes in isUploaded and perform actions if needed
 watch(isUploaded, (newValue) => {
     if (newValue) {
+        emit('uploaded')
         closeModal()
     }
 })
