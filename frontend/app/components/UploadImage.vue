@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { defineComponent, onMounted, onBeforeUnmount, ref } from "vue";
+import { defineComponent, onMounted, onBeforeUnmount, ref, defineEmits } from "vue";
 import Uppy from "@uppy/core";
 import Dashboard from "@uppy/dashboard";
 import "@uppy/core/css/style.min.css";
@@ -24,7 +24,8 @@ const supabaseStorageURL = `https://${SUPABASE_PROJECT_ID}.supabase.co/storage/v
 
 export default defineComponent({
   name: "UppyDashboard",
-  setup() {
+  emits: ['uploaded'],
+  setup(props, { emit }) {
     const uppyDashboard = ref(null);
     let uppy;
 
@@ -72,14 +73,15 @@ export default defineComponent({
 
       uppy.on("complete", (result) => {
         console.log("Upload complete:", result.successful);
+        emit('uploaded', true);
       });
     });
 
-    onBeforeUnmount(() => {
-      if (uppy) {
-        uppy.close();
-      }
-    });
+    // onBeforeUnmount(() => {
+    //   if (uppy) {
+    //     uppy.close();
+    //   }
+    // });
 
     return { uppyDashboard };
   },

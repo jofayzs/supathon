@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, ref } from 'vue'
+import { onMounted, onBeforeUnmount, ref } from 'vue'
 import mapboxgl from 'mapbox-gl'
 
 mapboxgl.accessToken = 'pk.eyJ1IjoidGhvbWFzLWJlcmtlbGV5IiwiYSI6ImNtZ2NvYTcyZDBvOHoybXBuZndyM28wbm4ifQ.VxNKayC7-Ky3yhLy3bm8dQ'
@@ -62,8 +62,12 @@ onMounted(() => {
         )
     })
 
-    setMap(mapInstance)
+    map.value = mapInstance
 })
+
+const reset = () => {
+    map.value = null
+}
 
 onBeforeUnmount(() => {
     map.value?.remove()
