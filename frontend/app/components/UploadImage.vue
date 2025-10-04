@@ -5,12 +5,13 @@
 </template>
 
 <script>
-import { defineComponent, onMounted, onBeforeUnmount, ref, defineEmits } from "vue";
+import { defineComponent, onMounted, ref } from "vue";
 import Uppy from "@uppy/core";
 import Dashboard from "@uppy/dashboard";
 import "@uppy/core/css/style.min.css";
 import "@uppy/dashboard/css/style.min.css";
 import Tus from "@uppy/tus";
+import { supabase } from "~~/utils/supabase";
 
 const SUPABASE_ANON_KEY =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inhhd3hkbHN2d3NwbnloaHhtcHF6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTk1OTgwNDgsImV4cCI6MjA3NTE3NDA0OH0.BaQo65NQHEJbB7trv8lnS5bYejkSyJMAnTLjo4soM2o";
@@ -24,12 +25,23 @@ const supabaseStorageURL = `https://${SUPABASE_PROJECT_ID}.supabase.co/storage/v
 
 export default defineComponent({
   name: "UppyDashboard",
-  emits: ['uploaded'],
+  emits: ["uploaded"],
   setup(props, { emit }) {
     const uppyDashboard = ref(null);
     let uppy;
 
-    onMounted(() => {
+    onMounted(async () => {
+      const {
+        data: { session },
+      } = await supabase.auth.getSession();
+
+      if (!session) {
+        console.error("No authenticated session found");
+        return;
+      }
+
+      const currentSession = session;
+
       uppy = new Uppy()
         .use(Dashboard, {
           inline: true,
@@ -71,9 +83,33 @@ export default defineComponent({
         console.log("file added", file);
       });
 
-      uppy.on("complete", (result) => {
-        console.log("Upload complete:", result.successful);
-        emit('uploaded', true);
+      uppy.on("complete", async (result) => {
+        const supabaseUrl = `https://${SUPABASE_PROJECT_ID}.supabase.co`;
+        const uploadedFile = result.successful[0];
+
+        if (uploadedFile) {
+          const imageUrl = `${supabaseUrl}/storage/v1/object/public/${STORAGE_BUCKET}/${uploadedFile.meta.objectName}`;
+
+          // Insert with authenticated user context
+          const { data, error } = await supabase
+            .from("posts")
+            .insert([
+              {
+                original_image_url: imageUrl,
+                user_id: currentSession.user.id, // Add user_id if your table has this column
+              },
+            ])
+            .select();
+
+          if (error) {
+            console.error("Failed to insert post:", error);
+          } else {
+            console.log("Successfully inserted post:", data);
+          }
+        } else {
+          console.log("No file was uploaded.");
+        }
+        emit("uploaded", true);
       });
     });
 
