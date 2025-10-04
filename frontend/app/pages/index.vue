@@ -1,15 +1,12 @@
 <script setup lang="ts">
-const script = ref(null)
-import MapView from '@/components/MapView.vue'
+const script = ref(null);
+import MapView from "@/components/MapView.vue";
+import UploadImage from "@/components/UploadImage.vue";
 </script>
 
-<script setup>
-</script>
-
+<script setup></script>
 
 <template>
-    <MapView />
-    <div>
-        <UFileUpload label="Drop your image here" class="w-96 min-h-48" />
-    </div>
+  <MapView />
+  <UploadImage />
 </template>
