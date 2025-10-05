@@ -32,7 +32,7 @@ const displayName = computed(() => {
 
             <!-- GitHub Button -->
             <UTooltip text="Open on GitHub" :kbds="['meta', 'G']">
-                <UButton color="neutral" variant="ghost" to="https://github.com/nuxt/ui" target="_blank"
+                <UButton color="neutral" variant="ghost" to="https://github.com/jofayzs/supathon" target="_blank"
                     icon="i-simple-icons-github" aria-label="GitHub" class="ml-3" />
             </UTooltip>
         </template>
