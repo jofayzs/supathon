@@ -37,6 +37,7 @@ onMounted(async () => {
         <MapView ref="mapViewRef" />
         <UploadModal @uploaded="handleUploadComplete"
           class="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-10" />
+        <UserModal />
       </div>
     </div>
   </div>
