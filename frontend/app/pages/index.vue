@@ -4,6 +4,7 @@ import UploadModal from "@/components/UploadModal.vue";
 import LoginForm from "@/components/LoginForm.vue";
 import Header from "@/components/Header.vue";
 import { useUserStore } from "~/stores/useUserStore";
+import UserModal from "@/components/UserModal.vue";
 
 const userStore = useUserStore();
 const mapViewRef = ref(null);
@@ -34,10 +35,8 @@ onMounted(async () => {
       <div class="z-10!">
         <Header />
         <MapView ref="mapViewRef" />
-        <UploadModal 
-          @uploaded="handleUploadComplete"
-          class="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-10" 
-        />
+        <UploadModal @uploaded="handleUploadComplete"
+          class="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-10" />
       </div>
     </div>
   </div>

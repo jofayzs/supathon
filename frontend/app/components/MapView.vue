@@ -4,6 +4,9 @@ import mapboxgl from 'mapbox-gl'
 import { useThemeStore } from '~/stores/useThemeStore'
 import { useUserStore } from '~/stores/useUserStore'
 import { useRealtimeLocation } from '~/composables/useRealtimeLocation'
+import { supabase } from '../../utils/supabase'
+
+const stateStore = useStateStore()
 
 mapboxgl.accessToken =
     'pk.eyJ1IjoidGhvbWFzLWJlcmtlbGV5IiwiYSI6ImNtZ2NvYTcyZDBvOHoybXBuZndyM28wbm4ifQ.VxNKayC7-Ky3yhLy3bm8dQ'
@@ -71,6 +74,45 @@ const updateMarkers = async (currentPositions: typeof positions.value) => {
                         'circle-stroke-width': 2,
                     },
                 })
+                // Add pop up to the layer
+                map.value.on('click', debugId, async (e) => {
+                    console.log('🖱️ Clicked marker', id)
+
+                    // 1️⃣ Fetch that user's posts from Supabase
+                    const { data: posts, error } = await supabase
+                        .from('posts')
+                        .select('*')
+                        .eq('user_id', id)
+                        .order('created_at', { ascending: false })
+
+                    console.log('📨 Fetched posts for', id, posts)
+
+                    if (error) {
+                        console.error('❌ Failed to fetch posts:', error.message)
+                        return
+                    }
+
+                    // 2️⃣ Pass the posts into the store for modal display
+                    stateStore.selectUser(id, { lat, lng, posts })
+                })
+
+                // Make cursor pointer on hover for all markers
+                map.value.on('mouseenter', debugId, () => {
+                    map.value!.getCanvas().style.cursor = 'pointer'
+                })
+
+                map.value.on('mouseleave', debugId, () => {
+                    map.value!.getCanvas().style.cursor = ''
+                })
+            } else {
+                // Update existing source data
+                const source = map.value.getSource(debugId) as mapboxgl.GeoJSONSource
+                source.setData({
+                    type: 'Feature',
+                    geometry: { type: 'Point', coordinates: [lng, lat] },
+                    properties: {},
+                })
+
             }
         } catch (err) {
             console.error('❌ Marker addTo(map) failed:', err)
