@@ -287,7 +287,7 @@ const handleGoogleLogin = async () => {
     const { data, error: authError } = await supabase.auth.signInWithOAuth({
       provider: "google",
       options: {
-        redirectTo: `https://supathon.vercel.app`,
+        redirectTo: `${window.location.origin}`,
       },
     });
 
