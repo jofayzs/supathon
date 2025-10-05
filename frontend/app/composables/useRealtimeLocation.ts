@@ -13,7 +13,7 @@ export function useRealtimeLocation(userId?: string) {
     channel = supabase.channel("locations", {
       config: {
         broadcast: { self: true },
-        presence: { key: userId || crypto.randomUUID() },
+        presence: { key: userId },
       },
     });
 
